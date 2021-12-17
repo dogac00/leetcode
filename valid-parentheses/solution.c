@@ -77,8 +77,8 @@ struct stack *stack_create(int capacity) {
 }
 
 void stack_destroy(struct stack* stack) {
-    if (stack->items != NULL)
-        free(stack->items);
+    free(stack->items);
+    free(stack);
 }
 
 int stack_size(struct stack *pt) {
