@@ -4,18 +4,13 @@
 */
 
 int removeDuplicates(int* nums, int numsSize) {
-    if (numsSize == 0)
-        return 0;
-    int last_elem = INT32_MIN;
-    int cur_idx = 0;
-    int count = 0;
-    for (int i = 0; i < numsSize; i++) {
-        if (nums[i] != last_elem) {
-            last_elem = nums[i];
-            nums[cur_idx] = nums[i];
-            count++;
-            cur_idx++;
+    if (numsSize < 2)
+        return numsSize;
+    int idx = 1;
+    for (int i = 1; i < numsSize; i++) {
+        if (nums[i] != nums[i - 1]) {
+            nums[idx++] = nums[i];
         }
     }
-    return count;
+    return idx;
 }
