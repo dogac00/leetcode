@@ -19,7 +19,7 @@ public class Solution
                                              List<IList<string>> result) {
         if (col >= board[0].Length)
         {
-            AddGridToResult(board, result);
+            AddBoardToResult(board, result);
             return;
         }
         
@@ -34,7 +34,7 @@ public class Solution
         }
     }
 
-    private static void AddGridToResult(char[][] board,
+    private static void AddBoardToResult(char[][] board,
                                        List<IList<string>> result) {
         var curBoard = new List<string>();
         for (var i = 0; i < board.Length; i++)
