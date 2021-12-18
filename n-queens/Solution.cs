@@ -46,7 +46,9 @@ public class Solution
         char[][] board = new char[n][];
         for (var i = 0; i < n; i++)
             board[i] = new char[n];
-        ClearBoard(board);
+        for (var i = 0; i < board.Length; i++)
+            for (var j = 0; j < board[0].Length; j++)
+                board[i][j] = '.';
         return board;
     }
     
@@ -82,11 +84,5 @@ public class Solution
             if (board[curX++][curY--] == 'Q')
                 return false;
         return true;
-    }
-
-    private static void ClearBoard(char[][] board) {
-        for (var i = 0; i < board.Length; i++)
-            for (var j = 0; j < board[0].Length; j++)
-                board[i][j] = '.';
     }
 }
